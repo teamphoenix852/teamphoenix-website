@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Team Phoenix Technology Limited</title>
+    <meta name="description" content="Get in touch with Team Phoenix - Hong Kong's premier IT solutions provider">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/TPTLogoOnly.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
+</head>
+<body>
+    
+	<!-- Main Header -->
+	<header class="main-header">
+		<div class="header-container">
+			<!-- Logo and Company Name - Left Side -->
+			<div class="logo-name-container">
+				<a href="index.html">
+					<img src="images/TPTLogoOnly.png" alt="Team Phoenix Logo" class="header-logo" width="86" height="79">
+				</a>	
+				<a href="index.html">
+					<span class="company-name">Team Phoenix Technology Limited</span>
+				</a>	
+			</div>
+			
+			<!-- Bouncing Balls Container -->
+			<div class="bouncing-balls-container">
+				<canvas id="bouncingBalls"></canvas>
+			</div>
+			
+			<!-- Main Navigation - Right Side -->
+			<nav class="main-nav">
+				<ul id="primary-navigation" class="nav-list" data-visible="false">
+					<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+					<li><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+					<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+					<li class="active"><a href="contacts.html"><i class="fas fa-address-book"></i> Contacts</a></li>
+				</ul>
+			</nav>
+			
+			<!-- Mobile Menu Toggle -->
+			<button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+				<span class="sr-only">Menu</span>
+				<i class="fas fa-bars"></i>
+			</button>
+		</div>
+	</header>
+
+    <div class="main-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>What's New?</h2>
+                <div class="news-item">
+                    <span class="news-date">03/23/2009</span>
+                    <p>T.P.T. is parted from its joint business.   <a href="news.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Special Offers</h2>
+                <ul class="offer-list">
+                    <li><a href="promotion-ASUS.html">ASUS GPU Workstation Series</a></li>
+                    <li><a href="promotion-DELL.html">DELL AI Workstation</a></li>
+                    <li><a href="promotion-F5.html">F5 Distributed Cloud Services</a></li>
+                    <li><a href="promotion-H3C.html">H3C MegaCube GB10</a></li>
+                    <li><a href="promotion-HPE-MS.html">HPE ProLiant Gen12 + Windows Server 2025</a></li>
+                    <li><a href="promotion-Lenovo.html">Lenovo ThinkStation & Commercial</a></li>
+                    <li><a href="promotion-Surface.html">Microsoft Surface Pro 11</a></li>
+                    <li><a href="promotion-Omada.html">Omada Industrial-Grade Switches</a></li>
+                    <li><a href="promotion-RHEL-Veeam.html">Red Hat x Veeam Bundle</a></li>
+                    <li><a href="promotion-Poly-Samsung.html">SAMSUNG 55" OBC + POLY V52 Conference System Bundle</a></li>
+                    <li><a href="promotion-VIGI.html">VIGI Surveillance Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Newsletter</h2>
+                <p>All you need to know about data protection, it's all included in this issue of our newsletter.  <a href="solutions.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+            </div>
+            
+            <div class="sidebar-contact">
+                <p>For inquiry, call us:</p>
+                <p>3106-8199</p>
+                <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="content">
+            <section class="contact-intro">
+                <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                 
+                <p>We'd love to hear from you! Reach out to us through any of the following methods:</p>
+            </section>
+
+            <!-- Phone/Email/Hours (3 Columns) -->
+            <div class="contact-methods three-columns">
+                <section class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+85231068199">+852 3106 8199</a></p>
+                    </div>
+                </section>
+                
+                <section class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a></p>
+                    </div>
+                </section>
+                
+                <section class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Business Hours</h3>
+                        <p>Weekdays: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </section>
+            </div>
+
+            
+            <!-- Office Address (Single Column) -->
+            <section class="contact-card full-width">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Our Office</h3>
+                    <address>
+                        <p><a href="https://www.google.com/maps/place/Hung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong/@22.3126437,114.2200851,18z/data=!4m15!1m8!3m7!1s0x34040148abe9b1fb:0xd5b6e28f31d92e50!2sHung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong!3b1!8m2!3d22.3123292!4d114.2209155!16s%2Fg%2F12hmv3qmp!3m5!1s0x34040148abe9b1fb:0xd5b6e28f31d92e50!8m2!3d22.3123292!4d114.2209155!16s%2Fg%2F12hmv3qmp?hl=en&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Our Location">5/F., Unit 1, Hung Tai Industrial Building, 37-39 Hung To Road, Kwun Tong, Kowloon, Hong Kong.</a></p>
+                    </address>
+                </div>
+            </section>
+            
+            <section class="map-section">
+                <h3><i class="fas fa-map"></i> Find Us</h3>
+                <div class="google-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.689060328689!2d114.2095103154436!3d22.31932034934883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404014f3c8c9c9b%3A0x1a3e1d5a7d5f8b5e!2sHung%20Tai%20Industrial%20Building%2C%2037-39%20Hung%20To%20Rd%2C%20Kwun%20Tong%2C%20Hong%20Kong!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Team Phoenix Location Map">
+                    </iframe>
+                </div>
+            </section>
+
+            
+			<section class="contact-form-section">
+				<div class="form-header">
+					<h3><i class="fas fa-paper-plane"></i> Get in Touch</h3>
+					<p class="form-subtitle">We'll respond within 24 business hours</p>
+				</div>
+				
+				<form id="contact-form" class="professional-form" novalidate>
+					<!-- Honeypot Fields (hidden) -->
+					<div class="hp-field">
+						<label for="hp_name">Name</label>
+						<input type="text" id="hp_name" name="hp_name" autocomplete="nope">
+					</div>
+					<div class="hp-field">
+						<label for="hp_email">Email</label>
+						<input type="email" id="hp_email" name="hp_email" autocomplete="nope">
+					</div>
+					<div class="hp-field">
+						<label for="hp_comment">Comment</label>
+						<textarea id="hp_comment" name="hp_comment"></textarea>
+					</div>
+					
+					<!-- Hidden Security Fields -->
+					<input type="hidden" id="js_challenge" name="js_challenge" value="">
+					<input type="hidden" id="form_load_time" name="form_load_time" value="">
+					
+					<!-- Visible Form Fields -->
+					<div class="form-row">
+						<div class="form-group">
+							<label for="name">Your Name <span class="required">*</span></label>
+							<div class="input-with-icon">
+								<i class="fas fa-user"></i>
+								<input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="John Doe">
+							</div>
+							<div class="error-message" id="name-error"></div>
+						</div>
+						
+						<div class="form-group">
+							<label for="email">Email Address <span class="required">*</span></label>
+							<div class="input-with-icon">
+								<i class="fas fa-envelope"></i>
+								<input type="email" id="email" name="email" required maxlength="100" placeholder="john@example.com">
+							</div>
+							<div class="error-message" id="email-error"></div>
+						</div>
+					</div>
+					
+					<div class="form-row">
+						<div class="form-group">
+							<label for="phone">Phone Number</label>
+							<div class="input-with-icon">
+								<i class="fas fa-phone"></i>
+								<input type="tel" id="phone" name="phone" pattern="[0-9]{8,15}" maxlength="15" placeholder="+852 1234 5678">
+							</div>
+							<div class="error-message" id="phone-error"></div>
+						</div>
+						
+						<div class="form-group">
+							<label for="subject">Subject <span class="required">*</span></label>
+							<div class="input-with-icon">
+								<i class="fas fa-tag"></i>
+								<input type="text" id="subject" name="subject" required minlength="5" maxlength="100" placeholder="How can we help?">
+							</div>
+							<div class="error-message" id="subject-error"></div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="message">Your Message <span class="required">*</span></label>
+						<div class="textarea-with-icon">
+							<i class="fas fa-comment"></i>
+							<textarea id="message" name="message" rows="5" required minlength="10" maxlength="1000" placeholder="Please provide details about your inquiry..."></textarea>
+						</div>
+						<div class="error-message" id="message-error"></div>
+					</div>
+					
+					<!-- reCAPTCHA -->
+					<div class="recaptcha-container">
+						<div class="g-recaptcha" data-sitekey="6LennCQrAAAAAGMHUBvo9N-4VSLseo8R-jbdLAdN"></div>
+						<div class="error-message" id="captcha-error"></div>
+					</div>
+					
+					<!-- Submit Button -->
+					<div class="form-actions">
+						<button type="submit" class="btn" style="margin-left: 1rem; background: #5BC0EB;" id="submit-btn">
+							<span class="btn-text">Send Message</span>
+							<i class="fas fa-paper-plane"></i>
+						</button>
+					</div>
+					
+					<!-- Form Status -->
+					<div id="form-status"></div>
+					
+					<!-- Privacy Notice -->
+					<div class="privacy-notice">
+						<i class="fas fa-lock"></i>
+						<span>We respect your privacy. Your information will not be shared.</span>
+					</div>
+				</form>
+			</section>
+            
+			
+        </main>
+    </div>
+
+    <!-- Main Footer - Reorganized Layout -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Quick Links - Now on Left -->
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info - Now in Middle -->
+				<div class="footer-section contact-info">
+					<h3>Contact Us</h3>
+					<address>
+						<p><i class="fas fa-phone"></i> +852 3106 8199</p>
+						<p><i class="fas fa-envelope"></i> <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a></p>
+						<p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+					</address>
+				</div>
+                
+                <!-- Address - Now on Right -->
+                <div class="footer-section company-address">
+                    <h3>Our Location</h3>
+                    <address>
+                        <a href="https://www.google.com/maps/place/Hung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong/@22.3126437,114.2200851,18z/data=!4m15!1m8!3m7!1s0x34040148abe9b1fb:0xd5b6e28f31d92e50!2sHung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong!3b1!8m2!3d22.3123292!4d114.2209155!16s%2Fg%2F12hmv3qmp!3m5!1s0x34040148abe9b1fb:0xd5b6e28f31d92e50!8m2!3d22.3123292!4d114.2209155!16s%2Fg%2F12hmv3qmp?hl=en&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Our Location"><p><i class="fas fa-map-marker-alt"></i> Team Phoenix Technology Limited</p>
+                        <p>5/F., Unit 1, Hung Tai Industrial Building,</p>
+                        <p>37-39 Hung To Road, Kwun Tong,</p>
+                        <p>Kowloon, Hong Kong.</p></a>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2006-<span id="current-year"></span> Team Phoenix Technology Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+	
+    <!-- Enhanced Security JavaScript -->
+    <script src="js/main.js" defer></script>
+	<script src="js/header-animation.js" defer></script>
+	<script src="js/contact-form.js" defer></script>
+</body>
+</html>

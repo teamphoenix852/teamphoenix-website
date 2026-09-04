@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dell Summer Sale & PRO MAX GB10 Workstation | Team Phoenix Technology Limited</title>
+    <meta name="description" content="Dell Summer Sale with up to 50% OFF and PRO MAX GB10 AI Supercomputer – 极致精巧AI超级工作站, powered by NVIDIA GB10.">
+    <meta name="keywords" content="Dell, Summer Sale, PRO MAX GB10, AI Workstation, NVIDIA GB10, Supercomputer, Dell Pro, Team Phoenix">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/TPTLogoOnly.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Promotion-specific styles for Dell – using Dell blue */
+        :root {
+            --dell-blue: #0076CE;
+            --dell-light: #E6F0FA;
+            --dell-accent: #FFB81C;
+            --dell-sale-red: #D51034;
+        }
+        
+        /* Tabs Styles */
+        .product-tabs {
+            margin: 2rem 0;
+        }
+        
+        .tab-headers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--dell-accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .tab-header {
+            background: #F0F0F0;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px 6px 0 0;
+            font-weight: 600;
+            color: #4a4a4a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+            bottom: -2px;
+        }
+        
+        .tab-header:hover {
+            background: #E0E0E0;
+            color: var(--dell-blue);
+        }
+        
+        .tab-header.active {
+            background: var(--dell-blue);
+            color: white;
+            border-bottom: 2px solid var(--dell-accent);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Full width image style for Summer Sale tab */
+        .full-width-image {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .full-width-image a,
+        .full-width-image picture {
+            display: block;
+            width: 100%;
+        }
+        
+        .full-width-image img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+        }
+        
+        /* Original promotion image style (for AI Workstation tab) */
+        .promotion-image {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        
+        .promotion-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border: 2px solid var(--dell-blue);
+        }
+        
+        .promotion-image a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .promotion-image a:hover {
+            transform: scale(1.02);
+        }
+        
+        .supply-badge {
+            background: linear-gradient(135deg, var(--dell-blue) 0%, #2C8FDF 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,118,206,0.3);
+        }
+        
+        .summer-badge {
+            background: linear-gradient(135deg, var(--dell-sale-red) 0%, #FF6B6B 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(213,16,52,0.3);
+            border: 2px solid var(--dell-accent);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--dell-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .feature-card h4 {
+            color: var(--dell-blue);
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--dell-accent), #FFC857);
+            color: #004B87;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #FFC857, #FFB81C);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,118,206,0.2);
+            border: 2px solid var(--dell-accent);
+        }
+        
+        .btn-large {
+            padding: 1rem 2.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn-blue {
+            background: linear-gradient(135deg, var(--dell-blue) 0%, #2C8FDF 100%);
+            color: white;
+            border: 2px solid var(--dell-accent);
+        }
+        
+        .btn-blue:hover {
+            background: linear-gradient(135deg, #005A9E 0%, #0076CE 100%);
+            color: white;
+        }
+        
+        .promotion-cta {
+            background: linear-gradient(135deg, #E6F0FA 0%, #F0F8FF 100%);
+            padding: 2.2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 2.8rem 0;
+            border: 3px solid var(--dell-blue);
+            box-shadow: 0 6px 16px rgba(0,118,206,0.1);
+        }
+        
+        .sale-notice {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            border-left: 4px solid var(--dell-sale-red);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .tab-header {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .tab-headers {
+                gap: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-name-container">
+                <a href="index.html">
+                    <img src="images/TPTLogoOnly.png" alt="Team Phoenix Logo" class="header-logo" width="86" height="79">
+                </a>    
+                <a href="index.html">
+                    <span class="company-name">Team Phoenix Technology Limited</span>
+                </a>    
+            </div>
+            
+            <div class="bouncing-balls-container">
+                <canvas id="bouncingBalls"></canvas>
+            </div>
+            
+            <nav class="main-nav">
+                <ul id="primary-navigation" class="nav-list" data-visible="false">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contacts</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>What's New?</h2>
+                <div class="news-item">
+                    <span class="news-date">03/23/2009</span>
+                    <p>T.P.T. is parted from its joint business. <a href="news.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Special Offers</h2>
+                <ul class="offer-list">
+                    <li><a href="promotion-ASUS.html">ASUS GPU Workstation Series</a></li>
+                    <li class="current-promotion"><a href="promotion-DELL.html">DELL Summer Sale & AI Workstation</a></li>
+                    <li><a href="promotion-F5.html">F5 Distributed Cloud Services</a></li>
+                    <li><a href="promotion-H3C.html">H3C MegaCube GB10</a></li>
+                    <li><a href="promotion-HPE-MS.html">HPE ProLiant Gen12 + Windows Server 2025</a></li>
+                    <li><a href="promotion-Lenovo.html">Lenovo ThinkStation & Commercial</a></li>
+                    <li><a href="promotion-Surface.html">Microsoft Surface Pro 11</a></li>
+                    <li><a href="promotion-Omada.html">Omada Industrial-Grade Switches</a></li>
+                    <li><a href="promotion-RHEL-Veeam.html">Red Hat x Veeam Bundle</a></li>
+                    <li><a href="promotion-Poly-Samsung.html">Samsung + POLY Conference Bundle</a></li>
+                    <li><a href="promotion-VIGI.html">VIGI Surveillance Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Newsletter</h2>
+                <p>All you need to know about data protection, it's all included in this issue of our newsletter. <a href="solutions.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+            </div>
+            
+            <div class="sidebar-contact">
+                <p>For inquiry, call us:</p>
+                <p>3106-8199</p>
+                <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="content">
+            
+            <!-- 2-Tab Navigation -->
+            <div class="product-tabs">
+                <div class="tab-headers">
+                    <button class="tab-header active" data-tab="summer">
+                        <i class="fas fa-sun"></i> Summer Sale
+                    </button>
+                    <button class="tab-header" data-tab="workstation">
+                        <i class="fas fa-microchip"></i> AI Workstation
+                    </button>
+                </div>
+                
+                <!-- Tab 1: Summer Sale Content - FULL WIDTH IMAGE -->
+                <div class="tab-content active" id="summer">
+                    <!-- Full width image - no container restrictions -->
+                    <div class="full-width-image">
+                        <a href="files/DELL-SummerSale.jpeg" target="_blank" title="View Dell Summer Sale details">
+                            <picture>
+                                <source srcset="images/DELL-SummerSale.jpeg" type="image/jpeg">
+                                <img src="images/DELL-SummerSale.jpeg" alt="Dell Summer Sale 2026 - Up to 50% OFF" loading="lazy">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tab 2: Original AI Workstation Content -->
+                <div class="tab-content" id="workstation">
+                    <section class="promotion-header">
+                        <h1><span style="color: #0076CE;"><i class="fas fa-microchip"></i></span> DELL PRO MAX GB10 AI Workstation</h1>
+                        <p class="promotion-subtitle" style="color: #004B87; font-weight: 600;">極致精巧AI超级工作站 · 供貨穩定，助您穩步前行</p>
+                        <div class="supply-badge">
+                            <i class="fas fa-check-circle" style="color: #FFB81C;"></i> 供貨穩定 · 不需等待3-4個月！現貨即取
+                        </div>
+                    </section>
+                    
+                    <div class="promotion-image">
+                        <a href="files/DELL-GB10.jpeg" target="_blank" title="View Dell PRO MAX GB10 details">
+                            <picture>
+                                <source srcset="images/DELL-GB10.jpeg" type="image/jpeg">
+                                <img src="images/DELL-GB10.jpeg" alt="Dell PRO MAX GB10 AI Supercomputer" loading="lazy">
+                            </picture>
+                        </a>
+                    </div>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4><i class="fas fa-robot" style="color: #FFB81C;"></i> AI 開發者首選</h4>
+                            <p>1000 TOPS FP4 性能，本地運行2000億參數模型， prototyping 到部署無縫銜接。</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-link"></i> 雙機串聯</h4>
+                            <p>透過ConnectX-7將兩台GB10結合，處理高達4000億參數模型，滿足更大規模AI研究。</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-box"></i> 供貨穩定</h4>
+                            <p>Dell 穩定的供應鏈，無需漫長等待。訂購後快速出貨，把握研發時程。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promotion-cta">
+                        <h3 style="color: #004B87; margin-top: 0; font-size: 1.9rem;"><i class="fas fa-chalkboard-teacher" style="color: #FFB81C;"></i> 立即查詢 · 一對一教學服務</h3>
+                        <p style="font-size: 1.2rem;">我們的AI專家可提供付費1對1教學，助您快速上手GB10。</p>
+                        <div style="margin: 1.8rem 0;">
+                            <a href="contacts.html" class="btn btn-large btn-blue">
+                                <i class="fas fa-envelope"></i> 索取報價
+                            </a>
+                            <a href="tel:+85231068199" class="btn btn-large" style="background: #C62828; color: white; border-color: #FFB81C;">
+                                <i class="fas fa-phone-alt"></i> Call 3106 8199
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-info">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-phone"></i> +852 3106 8199</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a></p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </address>
+                </div>
+                
+                <div class="footer-section company-address">
+                    <h3>Our Location</h3>
+                    <address>
+                        <a href="https://www.google.com/maps/place/Hung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong" target="_blank" title="Our Location">
+                            <p><i class="fas fa-map-marker-alt"></i> Team Phoenix Technology Limited</p>
+                            <p>5/F., Unit 1, Hung Tai Industrial Building,</p>
+                            <p>37-39 Hung To Road, Kwun Tong,</p>
+                            <p>Kowloon, Hong Kong.</p>
+                        </a>
+                    </address>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2006-<span id="current-year"></span> Team Phoenix Technology Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js" defer></script>
+    <script src="js/header-animation.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Tab functionality
+            const tabHeaders = document.querySelectorAll('.tab-header');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const tabId = header.getAttribute('data-tab');
+                    
+                    tabHeaders.forEach(h => h.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    header.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

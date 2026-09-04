@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F5 Distributed Cloud Services Promotion | Team Phoenix Technology Limited</title>
+    <meta name="description" content="Special promotion on F5 Distributed Cloud Services for application resilience and security from Team Phoenix Technology Limited">
+    <meta name="keywords" content="F5, Application Security, Distributed Cloud, Load Balancing, WAF, WAAP, Promotion, Team Phoenix, High Availability">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/TPTLogoOnly.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Promotion-specific styles for F5 */
+        .promotion-highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #E53329;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .promotion-highlight-box h3 {
+            margin-top: 0;
+            color: #E53329;
+            border-bottom: 2px solid #5BC0EB;
+            padding-bottom: 0.5rem;
+        }
+        
+        .f5-feature-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .f5-feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .f5-feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .f5-feature-list li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #E53329;
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+        
+        .promotion-image {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        
+        .promotion-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border: 1px solid #eee;
+        }
+        
+        .promotion-image a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .promotion-image a:hover {
+            transform: scale(1.02);
+        }
+        
+        .service-code {
+            font-family: monospace;
+            background: #E53329;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0 0.3rem;
+        }
+        
+        .trial-highlight {
+            color: #5BC0EB;
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: rgba(91, 192, 235, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+        
+        .promotion-badge {
+            background: linear-gradient(135deg, #E53329 0%, #FF6B6B 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(229, 51, 41, 0.3);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #E53329;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .feature-card h4 {
+            color: #E53329;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
+        }
+        
+        .free-trial-banner {
+            background: linear-gradient(135deg, #E53329 0%, #FF6B6B 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(229, 51, 41, 0.2);
+        }
+        
+        .free-trial-banner h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .promotion-highlight-box {
+                padding: 1.5rem;
+            }
+            
+            .free-trial-banner {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo and Company Name - Left Side -->
+            <div class="logo-name-container">
+                <a href="index.html">
+                    <img src="images/TPTLogoOnly.png" alt="Team Phoenix Logo" class="header-logo" width="86" height="79">
+                </a>    
+                <a href="index.html">
+                    <span class="company-name">Team Phoenix Technology Limited</span>
+                </a>    
+            </div>
+            
+            <!-- Bouncing Balls Container -->
+            <div class="bouncing-balls-container">
+                <canvas id="bouncingBalls"></canvas>
+            </div>
+            
+            <!-- Main Navigation - Right Side -->
+            <nav class="main-nav">
+                <ul id="primary-navigation" class="nav-list" data-visible="false">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contacts</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>What's New?</h2>
+                <div class="news-item">
+                    <span class="news-date">03/23/2009</span>
+                    <p>T.P.T. is parted from its joint business.   <a href="news.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Special Offers</h2>
+                <ul class="offer-list">
+                    <li><a href="promotion-ASUS.html">ASUS GPU Workstation Series</a></li>
+                    <li><a href="promotion-DELL.html">DELL AI Workstation</a></li>
+                    <li class="current-promotion"><a href="promotion-F5.html">F5 Distributed Cloud Services</a></li>
+                    <li><a href="promotion-H3C.html">H3C MegaCube GB10</a></li>
+                    <li><a href="promotion-HPE-MS.html">HPE ProLiant Gen12 + Windows Server 2025</a></li>
+                    <li><a href="promotion-Lenovo.html">Lenovo ThinkStation & Commercial</a></li>
+                    <li><a href="promotion-Surface.html">Microsoft Surface Pro 11</a></li>
+                    <li><a href="promotion-Omada.html">Omada Industrial-Grade Switches</a></li>
+                    <li><a href="promotion-RHEL-Veeam.html">Red Hat x Veeam Bundle</a></li>
+                    <li><a href="promotion-Poly-Samsung.html">SAMSUNG 55" OBC + POLY V52 Conference System Bundle</a></li>
+                    <li><a href="promotion-VIGI.html">VIGI Surveillance Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Newsletter</h2>
+                <p>All you need to know about data protection, it's all included in this issue of our newsletter.  <a href="solutions.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+            </div>
+            
+            <div class="sidebar-contact">
+                <p>For inquiry, call us:</p>
+                <p>3106-8199</p>
+                <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="content">
+            <section class="promotion-header">
+                <h1><span style="color: #E53329;"><i class="fas fa-cloud"></i></span> F5 Distributed Cloud Services Promotion</h1>
+                <p class="promotion-subtitle">Build true resilience and high availability for your business applications</p>
+				<br>
+                <div class="promotion-badge">
+                    <span style="color: #5BC0EB;"><i class="fas fa-bolt"></i></span> Free One-Month Trial Available
+                </div>
+            </section>
+            
+            <!-- Promotion Image -->
+            <div class="promotion-image">
+                <a href="files/F5.png" target="_blank" title="View full F5 promotion details">
+                <picture>
+                    <source srcset="images/F5.png" type="image/png"> 
+                    <img src="images/F5.png" alt="F5 Distributed Cloud Services Promotion Details" loading="lazy">
+                </picture>
+                </a>
+            </div>
+            
+           
+            <!-- Call to Action -->
+            <div class="promotion-details">
+                <div class="promotion-cta">
+                    <h3><span style="color: #E53329;"><i class="fas fa-headset"></i></span> Contact Our Application Delivery Specialists</h3>
+                    <p>Get customized F5 solutions tailored to your specific business requirements. Our certified F5 experts will help you design, implement, and optimize your application delivery and security infrastructure.</p>
+                    <div style="margin: 2rem 0;">
+                        <a href="contacts.html" class="btn btn-large" style="background: linear-gradient(135deg, #E53329 0%, #FF6B6B 100%); border: none;">
+                            <i class="fas fa-envelope"></i> Apply for Free Trial <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="tel:+85231068199" class="btn" style="margin-left: 1rem; background: #5BC0EB;">
+                            <i class="fas fa-phone"></i> Call Now: 3106 8799
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Main Footer - Reorganized Layout -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Quick Links - Now on Left -->
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info - Now in Middle -->
+                <div class="footer-section contact-info">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-phone"></i> +852 3106 8199</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a></p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </address>
+                </div>
+                
+                <!-- Address - Now on Right -->
+                <div class="footer-section company-address">
+                    <h3>Our Location</h3>
+                    <address>
+                        <a href="https://www.google.com/maps/place/Hung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong/@22.3126437,114.2200851,18z/data=!4m15!1m8!3m7!1s0x34040148abe9b1fb:0xd5b6e28f31d92e50!2sHung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong!3b1!8m2!3d22.3123292!4d114.2209155!16s%2Fg%2F12hmv3qmp!3m5!1s0x34040148abe9b1fb:0xd5b6e28f31d92e50!8m2!3d22.3123292!4d114.2209155!16s%2Fg%2F12hmv3qmp?hl=en&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Our Location"><p><i class="fas fa-map-marker-alt"></i> Team Phoenix Technology Limited</p>
+                        <p>5/F., Unit 1, Hung Tai Industrial Building,</p>
+                        <p>37-39 Hung To Road, Kwun Tong,</p>
+                        <p>Kowloon, Hong Kong.</p></a>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2006-<span id="current-year"></span> Team Phoenix Technology Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js" defer></script>
+    <script src="js/header-animation.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

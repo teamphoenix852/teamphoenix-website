@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPE ProLiant Compute Gen12 + Windows Server 2025 | Team Phoenix Technology Limited</title>
+    <meta name="description" content="HPE ProLiant Compute Gen12 with Windows Server 2025 - 全面守護 · 靈活應變 · 持續創新。端到端安全架構，高效能運算，AI就緒，混合雲部署。">
+    <meta name="keywords" content="HPE, ProLiant, Compute Gen12, Windows Server 2025, Microsoft, Server, Security, AI, Hybrid Cloud, Team Phoenix">
+    
+    <link rel="icon" type="image/png" href="images/TPTLogoOnly.png">
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== 全域變數 ===== */
+        :root {
+            --hpe-green: #009B77;
+            --hpe-green-dark: #007A5E;
+            --hpe-blue: #0072B0;
+            --hpe-dark: #1A2B3C;
+            --hpe-accent: #FFB81C;
+            --hpe-light: #F0F7FA;
+            --shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        /* ===== 通用卡片 ===== */
+        .card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.8rem 1.5rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.10);
+        }
+
+        /* ===== 標題區 ===== */
+        .promotion-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .promotion-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--hpe-dark);
+        }
+        .promotion-header h1 i {
+            color: var(--hpe-green);
+        }
+        .promotion-subtitle {
+            font-size: 1.15rem;
+            color: #555;
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        /* ===== 標籤 ===== */
+        .promotion-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--hpe-green), var(--hpe-blue));
+            color: #fff;
+            padding: 0.5rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(0,155,119,0.3);
+            margin: 0.5rem auto 1rem;
+            border: 1px solid var(--hpe-accent);
+        }
+        .promotion-badge i {
+            color: var(--hpe-accent);
+            margin-right: 6px;
+        }
+
+        /* ===== 圖片區 ===== */
+        .promotion-image {
+            text-align: center;
+            margin: 2rem 0 2.5rem;
+        }
+        .promotion-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+        .promotion-image a:hover img {
+            transform: scale(1.01);
+        }
+
+        /* ===== 高亮框 ===== */
+        .highlight-box {
+            background: linear-gradient(135deg, #fafafa, #f0f7fa);
+            border-left: 5px solid var(--hpe-green);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        .highlight-box h3 {
+            color: var(--hpe-green);
+            font-weight: 700;
+            margin-top: 0;
+            border-bottom: 2px solid var(--hpe-accent);
+            padding-bottom: 0.5rem;
+        }
+        .highlight-box p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        /* ===== 特色網格 ===== */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 1.6rem 1.2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 4px solid var(--hpe-green);
+            transition: 0.25s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.10);
+        }
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--hpe-accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .feature-card h4 {
+            color: var(--hpe-green);
+            font-weight: 700;
+            margin: 0.3rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ===== 標籤列 ===== */
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .badge-row .badge {
+            background: var(--hpe-light);
+            color: var(--hpe-dark);
+            padding: 0.4rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid #ddd;
+            transition: 0.2s ease;
+        }
+        .badge-row .badge:hover {
+            background: var(--hpe-green);
+            color: #fff;
+            border-color: var(--hpe-green);
+        }
+        .badge-row .badge i {
+            color: var(--hpe-green);
+            margin-right: 0.4rem;
+        }
+        .badge-row .badge:hover i {
+            color: #fff;
+        }
+
+        /* ===== 按鈕 ===== */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--hpe-green), var(--hpe-blue));
+            color: #fff;
+            padding: 0.75rem 2.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0,155,119,0.2);
+            margin: 0.3rem;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,155,119,0.3);
+            border-color: var(--hpe-accent);
+        }
+        .btn-gold {
+            background: var(--hpe-accent);
+            color: var(--hpe-dark);
+            box-shadow: 0 4px 12px rgba(255,184,28,0.3);
+        }
+        .btn-gold:hover {
+            background: #e6a600;
+            border-color: #fff;
+            color: #000;
+        }
+
+        /* ===== CTA 區 ===== */
+        .promotion-cta {
+            background: linear-gradient(135deg, #fafafa, #f0f7fa);
+            padding: 2.2rem 1.8rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 3px solid var(--hpe-green);
+            box-shadow: var(--shadow);
+            margin: 2.5rem 0;
+        }
+        .promotion-cta h3 {
+            color: var(--hpe-green);
+            font-weight: 700;
+            margin-top: 0;
+            font-size: 1.7rem;
+        }
+        .promotion-cta p {
+            font-size: 1rem;
+            color: #444;
+            max-width: 640px;
+            margin: 0.5rem auto 1.2rem;
+        }
+
+        /* ===== 響應式 ===== */
+        @media (max-width: 768px) {
+            .promotion-header h1 { font-size: 1.7rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .promotion-cta h3 { font-size: 1.3rem; }
+            .highlight-box { padding: 1.2rem; }
+            .badge-row .badge { font-size: 0.75rem; padding: 0.3rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ===== 主頁頭 ===== -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-name-container">
+                <a href="index.html">
+                    <img src="images/TPTLogoOnly.png" alt="Team Phoenix Logo" class="header-logo" width="86" height="79">
+                </a>    
+                <a href="index.html">
+                    <span class="company-name">Team Phoenix Technology Limited</span>
+                </a>    
+            </div>
+            
+            <div class="bouncing-balls-container">
+                <canvas id="bouncingBalls"></canvas>
+            </div>
+            
+            <nav class="main-nav">
+                <ul id="primary-navigation" class="nav-list" data-visible="false">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contacts</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- ===== 側邊欄 ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>What's New?</h2>
+                <div class="news-item">
+                    <span class="news-date">03/23/2009</span>
+                    <p>T.P.T. is parted from its joint business. <a href="news.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Special Offers</h2>
+                <ul class="offer-list">
+                    <li><a href="promotion-ASUS.html">ASUS GPU Workstation Series</a></li>
+                    <li><a href="promotion-DELL.html">DELL AI Workstation</a></li>
+                    <li><a href="promotion-F5.html">F5 Distributed Cloud Services</a></li>
+                    <li><a href="promotion-H3C.html">H3C MegaCube GB10</a></li>
+                    <li class="current-promotion"><a href="promotion-HPE-MS.html">HPE ProLiant Gen12 + Windows Server 2025</a></li>
+                    <li><a href="promotion-Lenovo.html">Lenovo ThinkStation & Commercial</a></li>
+                    <li><a href="promotion-Surface.html">Microsoft Surface Pro 11</a></li>
+                    <li><a href="promotion-Omada.html">Omada Industrial-Grade Switches</a></li>
+                    <li><a href="promotion-RHEL-Veeam.html">Red Hat x Veeam Bundle</a></li>
+                    <li><a href="promotion-Poly-Samsung.html">SAMSUNG 55" OBC + POLY V52</a></li>
+                    <li><a href="promotion-VIGI.html">VIGI Surveillance Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Newsletter</h2>
+                <p>All you need to know about data protection, it's all included in this issue of our newsletter. <a href="solutions.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+            </div>
+            
+            <div class="sidebar-contact">
+                <p>For inquiry, call us:</p>
+                <p>3106-8199</p>
+                <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a>
+            </div>
+        </aside>
+
+        <!-- ===== 主要內容 ===== -->
+        <main id="main-content" class="content">
+
+            <!-- 標題區 -->
+            <section class="promotion-header">
+                <h1><i class="fas fa-server"></i> HPE ProLiant Compute Gen12 + Windows Server 2025</h1>
+                <p class="promotion-subtitle">全面守護 · 靈活應變 · 持續創新</p>
+                <div class="promotion-badge">
+                    <i class="fas fa-shield-alt"></i> End-to-End Security · AI-Ready · Hybrid Cloud
+                </div>
+            </section>
+
+            <!-- 主視覺圖 -->
+            <div class="promotion-image">
+                <a href="files/HPE-PriLiant-Gen12.png" target="_blank" title="View full HPE ProLiant Compute Gen12 details">
+                    <picture>
+                        <source srcset="images/HPE-PriLiant-Gen12.png" type="image/png"> 
+                        <img src="images/HPE-PriLiant-Gen12.png" alt="HPE ProLiant Compute Gen12 + Windows Server 2025" loading="lazy">
+                    </picture>
+                </a>
+            </div>
+
+
+            <!-- 四大特色 -->
+            <h2 style="color:var(--hpe-green); font-weight:700; margin-top:2rem;"><i class="fas fa-cogs"></i> 核心優勢</h2>
+
+            <!-- 技術標籤 -->
+            <div class="badge-row">
+                <span class="badge"><i class="fas fa-check-circle"></i> HPE ProLiant Compute Gen12</span>
+                <span class="badge"><i class="fab fa-microsoft"></i> Windows Server 2025</span>
+                <span class="badge"><i class="fas fa-shield-alt"></i> Secured-core</span>
+                <span class="badge"><i class="fas fa-robot"></i> AI-Ready</span>
+                <span class="badge"><i class="fas fa-cloud"></i> Hybrid Cloud</span>
+            </div>
+
+
+            <!-- Call to Action -->
+                <div style="margin: 2rem 0; text-align:center;">
+                    <a href="contacts.html" class="btn btn-large" style="background: linear-gradient(135deg, #009B77 0%, #0072B0 100%); border: none;">
+                        <i class="fas fa-envelope"></i> 查詢報價 <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+85231068199" class="btn btn-large" style="margin-left: 1rem; background: #FFB81C; color: #1A2B3C;">
+                        <i class="fas fa-phone"></i> 銷售熱線: 3106 8199
+                    </a>
+                </div>
+
+
+        </main>
+    </div>
+
+    <!-- ===== 頁尾 ===== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-info">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-phone"></i> +852 3106 8199</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a></p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </address>
+                </div>
+                
+                <div class="footer-section company-address">
+                    <h3>Our Location</h3>
+                    <address>
+                        <a href="https://www.google.com/maps/place/Hung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong" target="_blank" title="Our Location">
+                            <p><i class="fas fa-map-marker-alt"></i> Team Phoenix Technology Limited</p>
+                            <p>5/F., Unit 1, Hung Tai Industrial Building,</p>
+                            <p>37-39 Hung To Road, Kwun Tong,</p>
+                            <p>Kowloon, Hong Kong.</p>
+                        </a>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2006-<span id="current-year"></span> Team Phoenix Technology Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js" defer></script>
+    <script src="js/header-animation.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

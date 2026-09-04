@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGI by TP-Link Surveillance Solutions | Team Phoenix Technology Limited</title>
+    <meta name="description" content="VIGI professional surveillance solutions - Pan-Tilt Cameras with full-color night vision, NVRs with PoE+, and free cloud VMS. Complete security systems from TP-Link.">
+    <meta name="keywords" content="VIGI, TP-Link, Pan-Tilt Camera, NVR, Network Video Recorder, CCTV, Surveillance, Security Camera, Omada Central">
+    
+    <link rel="icon" type="image/png" href="images/TPTLogoOnly.png">
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== 全域變數 ===== */
+        :root {
+            --tplink-primary: #4CAF50;
+            --tplink-secondary: #66BB6A;
+            --tplink-dark: #2E7D32;
+            --tplink-accent: #FFB74D;
+            --tplink-blue: #2196F3;
+            --shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        /* ===== 通用卡片 ===== */
+        .card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.8rem 1.5rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.10);
+        }
+
+        /* ===== 標題區 ===== */
+        .promotion-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .promotion-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--tplink-dark);
+        }
+        .promotion-header h1 i {
+            color: var(--tplink-primary);
+        }
+        .promotion-subtitle {
+            font-size: 1.15rem;
+            color: #555;
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        /* ===== 標籤 ===== */
+        .supply-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--tplink-primary), var(--tplink-secondary));
+            color: #fff;
+            padding: 0.5rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+            margin: 0.5rem auto 1rem;
+        }
+        .supply-badge i {
+            margin-right: 6px;
+        }
+
+        /* ===== 圖片區 ===== */
+        .promotion-image {
+            text-align: center;
+            margin: 2rem 0 2.5rem;
+        }
+        .promotion-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        .promotion-image a:hover img {
+            transform: scale(1.01);
+        }
+
+        /* ===== 功能特色網格 (Key Benefits) ===== */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 1.6rem 1.2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 4px solid var(--tplink-primary);
+            transition: 0.25s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.10);
+        }
+        .feature-card h4 {
+            color: var(--tplink-dark);
+            font-weight: 700;
+            margin: 0.3rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .feature-card h4 i {
+            color: var(--tplink-accent);
+            margin-right: 0.3rem;
+        }
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ===== 區塊標題 ===== */
+        .section-title {
+            color: var(--tplink-dark);
+            font-size: 1.6rem;
+            font-weight: 700;
+            border-left: 5px solid var(--tplink-primary);
+            padding-left: 1rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        /* ===== 攝影機網格 ===== */
+        .camera-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .camera-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 1.2rem 1.2rem 1.5rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--tplink-primary);
+            transition: 0.25s ease;
+        }
+        .camera-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+        }
+        .camera-model {
+            font-weight: 700;
+            color: var(--tplink-primary);
+            font-size: 1.1rem;
+        }
+        .camera-card h4 {
+            color: var(--tplink-dark);
+            margin: 0.2rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        .feature-tag {
+            background: #e8f5e9;
+            color: var(--tplink-dark);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin: 0.2rem 0.2rem 0 0;
+            font-weight: 500;
+            border: 1px solid #c8e6c9;
+        }
+
+        /* ===== NVR 表格 ===== */
+        .nvr-table-container {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+        .nvr-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .nvr-table th {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            color: var(--tplink-dark);
+            padding: 12px 14px;
+            font-weight: 700;
+            text-align: left;
+            border-bottom: 3px solid var(--tplink-primary);
+        }
+        .nvr-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        .nvr-table tr:hover td {
+            background-color: #f9fbe7;
+        }
+
+        /* ===== 軟體與雲端服務 ===== */
+        .software-section {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-radius: var(--radius);
+            padding: 2rem 1.8rem;
+            margin: 2.5rem 0;
+            box-shadow: var(--shadow);
+        }
+        .software-section h3 {
+            color: var(--tplink-dark);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+        .software-item {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 1.2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.25s ease;
+        }
+        .software-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .software-item i {
+            font-size: 2rem;
+            color: var(--tplink-primary);
+            margin-bottom: 0.5rem;
+        }
+        .software-item h5 {
+            margin: 0.5rem 0 0.3rem;
+            color: var(--tplink-dark);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .software-item p {
+            font-size: 0.85rem;
+            color: #555;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ===== 按鈕 ===== */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--tplink-primary), var(--tplink-secondary));
+            color: #fff;
+            padding: 0.75rem 2.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: 0.25s ease;
+            box-shadow: 0 4px 12px rgba(76,175,80,0.2);
+            margin: 0.3rem;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(76,175,80,0.3);
+            border-color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--tplink-primary);
+            color: var(--tplink-primary);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: var(--tplink-primary);
+            color: #fff;
+            border-color: var(--tplink-primary);
+        }
+
+        /* ===== CTA 區 ===== */
+        .promotion-cta {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            padding: 2.2rem 1.8rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 3px solid var(--tplink-primary);
+            box-shadow: var(--shadow);
+            margin: 2.5rem 0;
+        }
+        .promotion-cta h3 {
+            color: var(--tplink-dark);
+            font-weight: 700;
+            margin-top: 0;
+            font-size: 1.7rem;
+        }
+        .promotion-cta h3 i {
+            color: var(--tplink-primary);
+        }
+        .promotion-cta p {
+            font-size: 1rem;
+            color: #444;
+            max-width: 640px;
+            margin: 0.5rem auto 1.2rem;
+        }
+
+        /* ===== 響應式 ===== */
+        @media (max-width: 768px) {
+            .promotion-header h1 { font-size: 1.7rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .camera-grid { grid-template-columns: 1fr; }
+            .software-grid { grid-template-columns: 1fr; }
+            .promotion-cta h3 { font-size: 1.3rem; }
+            .section-title { font-size: 1.3rem; }
+            .nvr-table { font-size: 0.75rem; }
+            .nvr-table th, .nvr-table td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 主頁頭 ===== -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-name-container">
+                <a href="index.html"><img src="images/TPTLogoOnly.png" alt="Team Phoenix Logo" class="header-logo" width="86" height="79"></a>
+                <a href="index.html"><span class="company-name">Team Phoenix Technology Limited</span></a>
+            </div>
+            <div class="bouncing-balls-container"><canvas id="bouncingBalls"></canvas></div>
+            <nav class="main-nav">
+                <ul id="primary-navigation" class="nav-list" data-visible="false">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contacts</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- ===== 側邊欄 ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>What's New?</h2>
+                <div class="news-item">
+                    <span class="news-date">03/23/2009</span>
+                    <p>T.P.T. is parted from its joint business. <a href="news.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h2>Special Offers</h2>
+                <ul class="offer-list">
+                    <li><a href="promotion-ASUS.html">ASUS GPU Workstation Series</a></li>
+                    <li><a href="promotion-DELL.html">DELL AI Workstation</a></li>
+                    <li><a href="promotion-F5.html">F5 Distributed Cloud Services</a></li>
+                    <li><a href="promotion-H3C.html">H3C MegaCube GB10</a></li>
+                    <li><a href="promotion-HPE-MS.html">HPE ProLiant Gen12 + Windows Server 2025</a></li>
+                    <li><a href="promotion-Lenovo.html">Lenovo ThinkStation & Commercial</a></li>
+                    <li><a href="promotion-Surface.html">Microsoft Surface Pro 11</a></li>
+                    <li><a href="promotion-Omada.html">Omada Industrial-Grade Switches</a></li>
+                    <li><a href="promotion-RHEL-Veeam.html">Red Hat x Veeam Bundle</a></li>
+                    <li><a href="promotion-Poly-Samsung.html">Samsung + POLY Conference Bundle</a></li>
+                    <li class="current-promotion"><a href="promotion-VIGI.html">VIGI Surveillance Solutions</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h2>Newsletter</h2>
+                <p>All you need to know about data protection, it's all included in this issue of our newsletter. <a href="solutions.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></p>
+            </div>
+            <div class="sidebar-contact">
+                <p>For inquiry, call us:</p>
+                <p>3106-8199</p>
+                <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a>
+            </div>
+        </aside>
+
+        <!-- ===== 主要內容 ===== -->
+        <main id="main-content" class="content">
+
+            <!-- 標題區 -->
+            <section class="promotion-header">
+                <h1><i class="fas fa-video"></i> VIGI by TP-Link Surveillance Solutions</h1>
+                <p class="promotion-subtitle">全彩夜視自動追蹤 · 長時間監控錄影</p>
+                <div class="supply-badge">
+                    <i class="fas fa-cloud"></i> VIGI Cloud VMS · Omada Central Integration
+                </div>
+            </section>
+
+            <!-- 主視覺圖 -->
+            <div class="promotion-image">
+                <a href="files/VIGI-Network.png" target="_blank" title="View VIGI Surveillance Solutions details">
+                    <picture>
+                        <source srcset="images/VIGI-Network.png" type="image/png">
+                        <img src="images/VIGI-Network.png" alt="VIGI by TP-Link - Pan-Tilt Cameras and NVR Surveillance Solutions" loading="lazy">
+                    </picture>
+                </a>
+            </div>
+
+            <!-- ===== 核心優勢 ===== -->
+            <h2 class="section-title"><i class="fas fa-star" style="color:#FFB74D;"></i> 核心優勢</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4><i class="fas fa-sync-alt"></i> Pan-Tilt &amp; Auto-Tracking</h4>
+                    <p>360°自動追蹤監控 with intelligent motion tracking. Cover every angle with ease.</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-moon"></i> Full-Color Night Vision</h4>
+                    <p>超低光彩色夜視 with F1.0 aperture and 1/1.8" high-sensitivity CMOS sensor.</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-database"></i> Long-Term Recording</h4>
+                    <p>H.265+ compression saves bandwidth and storage. Up to 16TB per drive.</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-charging-station"></i> PoE+ Support</h4>
+                    <p>Power over Ethernet simplifies installation. Multiple NVRs with PoE+ ports.</p>
+                </div>
+            </div>
+
+            <!-- ===== Pan-Tilt 攝影機 ===== -->
+            <h2 class="section-title"><i class="fas fa-camera"></i> Pan-Tilt Network Cameras</h2>
+            <div class="camera-grid">
+                <div class="camera-card">
+                    <div class="camera-model">C540V</div>
+                    <h4>4MP Full-Color Dual-Lens Varifocal Pan Tilt Cam</h4>
+                    <div>
+                        <span class="feature-tag">4mm/12mm快速切換</span>
+                        <span class="feature-tag">3倍變焦</span>
+                        <span class="feature-tag">客製化巡邏</span>
+                        <span class="feature-tag">30米紅外夜視</span>
+                    </div>
+                </div>
+                <div class="camera-card">
+                    <div class="camera-model">C540S</div>
+                    <h4>4MP ColorPro Night Vision Pan Tilt Cam</h4>
+                    <div>
+                        <span class="feature-tag">超低光彩色夜視</span>
+                        <span class="feature-tag">F1.0大光圈</span>
+                        <span class="feature-tag">1/1.8" CMOS</span>
+                        <span class="feature-tag">360°自動追蹤</span>
+                        <span class="feature-tag">聲光警報</span>
+                    </div>
+                </div>
+                <div class="camera-card">
+                    <div class="camera-model">C540</div>
+                    <h4>4MP Outdoor Full-Color Pan Tilt Cam</h4>
+                    <div>
+                        <span class="feature-tag">360°自動追蹤</span>
+                        <span class="feature-tag">30米紅外夜視</span>
+                        <span class="feature-tag">智慧偵測</span>
+                    </div>
+                </div>
+                <div class="camera-card">
+                    <div class="camera-model">C540-G</div>
+                    <h4>4MP Outdoor Full-Color 4G SIM Pan Tilt Cam</h4>
+                    <div>
+                        <span class="feature-tag">4G SIM Connectivity</span>
+                        <span class="feature-tag">360°自動追蹤</span>
+                        <span class="feature-tag">30米紅外夜視</span>
+                        <span class="feature-tag">IP66</span>
+                    </div>
+                </div>
+                <div class="camera-card">
+                    <div class="camera-model">C540-W</div>
+                    <h4>4MP Outdoor Full-Color Wi-Fi Pan Tilt Cam</h4>
+                    <div>
+                        <span class="feature-tag">Wi-Fi/有線LAN</span>
+                        <span class="feature-tag">12V DC/1A</span>
+                        <span class="feature-tag">30米紅外夜視</span>
+                        <span class="feature-tag">IP66</span>
+                        <span class="feature-tag">自動人物追蹤</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NVR 表格 ===== -->
+            <h2 class="section-title"><i class="fas fa-server"></i> Network Video Recorders (NVR)</h2>
+            <div class="nvr-table-container">
+                <table class="nvr-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Channels</th>
+                            <th>Features</th>
+                            <th>Storage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>NVR4064H</strong></td><td>64 Ch</td><td>H.265+, 320Mbps Bandwidth</td><td>4 x SATA, Up to 16TB each</td></tr>
+                        <tr><td><strong>NVR4032H</strong></td><td>32 Ch</td><td>H.265+, 320Mbps Bandwidth</td><td>4 x SATA, Up to 16TB each</td></tr>
+                        <tr><td><strong>NVR4016H</strong></td><td>16 Ch</td><td>H.265+, 320Mbps Bandwidth</td><td>4 x SATA, Up to 16TB each</td></tr>
+                        <tr><td><strong>NVR2016H</strong></td><td>16 Ch</td><td>H.265+, 160Mbps Bandwidth</td><td>2 x SATA, Up to 16TB each</td></tr>
+                        <tr><td><strong>NVR2008H-8MP</strong></td><td>8 Ch</td><td>PoE+, 90W PoE Budget, H.265+</td><td>2 x SATA, Up to 16TB each</td></tr>
+                        <tr><td><strong>NVR1008H-8MP</strong></td><td>8 Ch</td><td>PoE+, 113W PoE Budget, H.265+</td><td>1 x SATA, Up to 16TB</td></tr>
+                        <tr><td><strong>NVR1008H-8P</strong></td><td>8 Ch</td><td>PoE+, 53W PoE Budget, H.265+</td><td>1 x SATA, Up to 16TB</td></tr>
+                        <tr><td><strong>NVR1104H-4P</strong></td><td>4 Ch</td><td>PoE+, 53W PoE Budget, H.265+</td><td>1 x SATA, Up to 10TB</td></tr>
+                        <tr><td><strong>NVR1004H-4P</strong></td><td>4 Ch</td><td>PoE+, 53W PoE Budget, H.265+</td><td>1 x SATA, Up to 10TB</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== 軟體與雲端服務 ===== -->
+            <div class="software-section">
+                <h3><i class="fas fa-cloud-upload-alt"></i> Software &amp; Cloud Services</h3>
+                <div class="software-grid">
+                    <div class="software-item">
+                        <i class="fas fa-drafting-compass"></i>
+                        <h5>VIGI Project Design Tool</h5>
+                        <p>自訂比例尺和牆壁，實現精確的環境模擬。計算CCTV數量，客製化的專業提案。</p>
+                    </div>
+                    <div class="software-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h5>VIGI App</h5>
+                        <p>Manage Your Security Anytime, Anywhere</p>
+                    </div>
+                    <div class="software-item">
+                        <i class="fas fa-globe"></i>
+                        <h5>Central Essentials</h5>
+                        <p>Free Cloud Networking Management Platform · Unlimited Management Scale · Lifetime Free Cloud (No Additional Fees)</p>
+                    </div>
+                    <div class="software-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h5>Omada Central</h5>
+                        <p>Unified network and surveillance management integration</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CTA 行動呼籲 ===== -->
+                <div style="margin: 1.5rem 0; text-align:center;">
+                    <a href="contacts.html" class="btn"><i class="fas fa-envelope"></i> Request a Quote</a>
+                    <a href="tel:+85231068199" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call 3106 8199</a>
+                </div>
+
+        </main>
+    </div>
+
+    <!-- ===== 頁尾 ===== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="offers.html"><i class="fas fa-tag"></i> Offers</a></li>
+                        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-address-book"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-info">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-phone"></i> +852 3106 8199</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:inquiry@teamphoenix.com.hk">inquiry@teamphoenix.com.hk</a></p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </address>
+                </div>
+                <div class="footer-section company-address">
+                    <h3>Our Location</h3>
+                    <address>
+                        <a href="https://www.google.com/maps/place/Hung+Tai+Industrial+Building,+37+Hung+To+Rd,+Kwun+Tong,+Hong+Kong" target="_blank" title="Our Location">
+                            <p><i class="fas fa-map-marker-alt"></i> Team Phoenix Technology Limited</p>
+                            <p>5/F., Unit 1, Hung Tai Industrial Building,</p>
+                            <p>37-39 Hung To Road, Kwun Tong,</p>
+                            <p>Kowloon, Hong Kong.</p>
+                        </a>
+                    </address>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2006-<span id="current-year"></span> Team Phoenix Technology Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/header-animation.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

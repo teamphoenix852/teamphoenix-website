@@ -1,0 +1,87 @@
+/* 機器人容器 - 縮小為原本約 60% (從200px->120px) */
+.robot-gif-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+	width: 140px;                /* 原本200px，縮小至120px */
+	animation: float 3s ease-in-out infinite;
+	cursor: pointer;
+	filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+	transition: filter 0.3s ease;
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-8px); }  /* 浮動幅度稍微調小 */
+}
+
+.robot-gif-container:hover {
+	filter: drop-shadow(0 8px 20px rgba(255,107,107,0.4));
+}
+
+.robot-gif {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* 歡迎氣泡 - 跟著縮小並微調位置 */
+.welcome-bubble {
+	position: absolute;
+	top: -35px;                  /* 微調位置 */
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	color: #ff6b6b;
+	padding: 4px 11px;           /* 內縮減小 */
+	border-radius: 18px;
+	font-size: 11px;              /* 字體縮小 */
+	font-weight: bold;
+	white-space: nowrap;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+	opacity: 0;
+	transition: opacity 0.3s ease, transform 0.2s;
+	pointer-events: none;
+	line-height: 1.4;
+}
+
+.welcome-bubble::after {
+	content: '';
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;   /* 三角縮小 */
+	border-right: 6px solid transparent;
+	border-top: 6px solid white;
+}
+
+.robot-gif-container:hover .welcome-bubble {
+	opacity: 1;
+}
+
+/* 針對更小螢幕再微調 */
+@media (max-width: 768px) {
+	.robot-gif-container {
+		width: 110px;              /* 平板再縮小 */
+	}
+	.welcome-bubble {
+		font-size: 11px;
+		padding: 3px 10px;
+		top: -30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.robot-gif-container {
+		width: 90px;               /* 手機再縮小 */
+	}
+	.welcome-bubble {
+		font-size: 10px;
+		padding: 2px 8px;
+		top: -28px;
+	}
+}
